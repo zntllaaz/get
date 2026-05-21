@@ -10,7 +10,6 @@ def get_sin_wave_amplitude(freq, current_time):
 def get_triangle_wave_amplitude(freq, current_time):
 
     period = 1 / freq
-
     phase = (current_time % period) / period
 
     if phase < 0.5:
