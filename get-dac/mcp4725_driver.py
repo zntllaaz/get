@@ -9,11 +9,8 @@ class MCP4725:
                  verbose=True):
 
         self.bus = smbus.SMBus(1)
-
         self.address = address
-
         self.dynamic_range = dynamic_range
-
         self.verbose = verbose
 
         self.wm = 0x00
@@ -29,7 +26,6 @@ class MCP4725:
             return
 
         first_byte = self.wm | self.pds | (number >> 8)
-
         second_byte = number & 0xFF
 
         self.bus.write_byte_data(
@@ -61,7 +57,6 @@ if __name__ == "__main__":
         while True:
 
             voltage = float(input("Введите напряжение: "))
-
             dac.set_voltage(voltage)
 
     finally:
