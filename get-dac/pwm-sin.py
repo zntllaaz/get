@@ -23,7 +23,6 @@ try:
     while True:
 
         current_time = time.time() - start
-
         voltage = amplitude * sg.get_sin_wave_amplitude(
             signal_frequency,
             current_time
