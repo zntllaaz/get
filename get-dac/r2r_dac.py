@@ -35,7 +35,7 @@ class R2R_DAC:
     def set_voltage(self, voltage):
 
         if not (0 <= voltage <= self.dynamic_range):
-            print("Напряжение вне диапазона")
+            print("Напряжение вне диапазона.")
             return
 
         number = int(voltage / self.dynamic_range * 255)
