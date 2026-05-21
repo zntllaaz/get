@@ -1,8 +1,6 @@
 import time
-
 import r2r_dac
 import signal_generator as sg
-
 
 amplitude = 3.2
 signal_frequency = 5
