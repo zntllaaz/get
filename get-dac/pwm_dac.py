@@ -14,17 +14,14 @@ class PWM_DAC:
         self.verbose = verbose
 
         GPIO.setmode(GPIO.BCM)
-
         GPIO.setup(self.gpio_pin, GPIO.OUT)
 
         self.pwm = GPIO.PWM(self.gpio_pin, pwm_frequency)
-
         self.pwm.start(0)
 
     def deinit(self):
 
         self.pwm.stop()
-
         GPIO.cleanup()
 
     def set_voltage(self, voltage):
