@@ -1,9 +1,7 @@
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
-
 dac_bits = [16, 20, 21, 25, 26, 17, 27, 22]
-
 GPIO.setup(dac_bits, GPIO.OUT, initial=0)
 
 dynamic_range = 3.3
@@ -26,11 +24,8 @@ try:
     while True:
         try:
             voltage = float(input("Введите напряжение: "))
-
             number = voltage_to_number(voltage)
-
             number_to_dac(number)
-
             print(f"Число ЦАП: {number}")
 
         except ValueError:
