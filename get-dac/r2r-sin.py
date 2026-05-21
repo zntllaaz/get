@@ -5,9 +5,7 @@ import signal_generator as sg
 
 
 amplitude = 3.2
-
 signal_frequency = 10
-
 sampling_frequency = 1000
 
 
