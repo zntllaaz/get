@@ -1,15 +1,24 @@
 import numpy as np
 import time
 
-def get_sin_wave_amplitude(freq, t):
-    #Возвращает нормализованную амплитуду синусоидального сигнала от 0 до 1
 
-    raw_sin = np.sin(2 * np.pi * freq * t)
-    normalized = (raw_sin + 1) / 2
-    return normalized
+def get_sin_wave_amplitude(freq, current_time):
+
+    return (np.sin(2 * np.pi * freq * current_time) + 1) / 2
+
+
+def get_triangle_wave_amplitude(freq, current_time):
+
+    period = 1 / freq
+
+    phase = (current_time % period) / period
+
+    if phase < 0.5:
+        return phase * 2
+
+    return 2 - phase * 2
+
 
 def wait_for_sampling_period(sampling_frequency):
-    #Ждет один период дискретизации
-    
-    time.sleep(1.0 / sampling_frequency)
 
+    time.sleep(1 / sampling_frequency)
